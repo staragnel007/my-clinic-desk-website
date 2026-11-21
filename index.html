@@ -27,6 +27,18 @@ section[id]{scroll-margin-top:80px}
 .faq[open] .sign::before{content:"−"}
 .faq p{margin:0;padding:0 22px 20px;font-size:16px;line-height:1.6;color:#474B4A}
 @media (max-width:640px){nav > div{gap:16px !important}}
+.shots{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:24px}
+.shot{grid-column:span 2;background:#FFFFFF;border:1px solid #E2E2DC;border-radius:20px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 30px rgba(22,26,24,0.06);transition:transform .25s ease,box-shadow .25s ease}
+.shot.wide{grid-column:span 3}
+.shot:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(22,26,24,0.12)}
+.shot .pic{background:#F4F4F0;border-bottom:1px solid #ECECE7;aspect-ratio:4/3;overflow:hidden}
+.shot.wide .pic{aspect-ratio:16/9}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
+.shot .txt{padding:22px 24px 26px;display:flex;flex-direction:column;gap:8px}
+.shot h3{margin:0;font-size:20px;font-weight:700;letter-spacing:-0.01em;color:#161A18}
+.shot p{margin:0;font-size:15.5px;line-height:1.6;color:#474B4A}
+@media (max-width:900px){.shot,.shot.wide{grid-column:span 6}}
+@media (min-width:600px) and (max-width:900px){.shots{grid-template-columns:repeat(2,minmax(0,1fr))}.shot,.shot.wide{grid-column:span 1}.shot.wide .pic{aspect-ratio:4/3}}
 </style>
 </head>
 <body>
@@ -53,7 +65,7 @@ section[id]{scroll-margin-top:80px}
 
 <section id="top" style="background: #FAFAF8">
 <div style="max-width: 1100px; margin: 0 auto; padding: 96px 24px 56px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px">
-<h1 style="margin: 0; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: clamp(40px, 6.6vw, 80px); line-height: 1.08; font-weight: 800; letter-spacing: -0.035em; color: #161A18">The <span style="color: #1F6F4A">simplest</span> clinic management software for doctors</h1>
+<h1 style="margin: 0; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: clamp(38px, 6vw, 72px); line-height: 1.08; font-weight: 800; letter-spacing: -0.035em; color: #161A18">The <span style="color: #1F6F4A">cleanest, simplest</span> clinic management software — at an affordable price.</h1>
 <p style="margin: 0; font-size: clamp(18px, 1.8vw, 22px); line-height: 1.6; color: #474B4A; max-width: 640px">Appointments, patient records, prescriptions and bills in one app. Made for small clinics in India — for the price of printing your patient sheets.</p>
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 4px">
 <a href="https://clinic-backend-production-cb12bfed.up.railway.app" style="background: #1F6F4A; color: #FFFFFF; text-decoration: none; padding: 16px 28px; border-radius: 12px; font-weight: 700; font-size: 17px; min-height: 52px; display: inline-flex; align-items: center">Start free trial</a>
@@ -67,12 +79,44 @@ Book a demo on WhatsApp</a>
 <span style="display: flex; align-items: center; gap: 8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1F6F4A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Free setup help</span>
 </div>
 </div>
-<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px 96px">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px 72px">
 <div style="border-radius: 24px; overflow: hidden; background: #161A18; box-shadow: 0 32px 80px rgba(22,26,24,0.18); aspect-ratio: 16 / 9">
 <video controls playsinline preload="none" poster="assets/intro-poster.jpg" style="display: block; width: 100%; height: 100%; object-fit: cover" aria-label="MyClinicDesk introduction video">
 <source src="assets/intro.mp4" type="video/mp4">
 Your browser does not support video. <a href="assets/intro.mp4">Download the intro video</a>.
 </video>
+</div>
+</div>
+</section>
+
+<section style="background: #FAFAF8; border-bottom: 1px solid #ECECE7">
+<div style="max-width: 1200px; margin: 0 auto; padding: 24px 24px 96px">
+<div style="max-width: 680px; margin: 0 auto 48px; text-align: center; display: flex; flex-direction: column; gap: 14px">
+<span style="color: #17573A; font-weight: 700; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase">Inside the app</span>
+<h2 style="margin: 0; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.12; font-weight: 800; letter-spacing: -0.02em">Everything you need. Nothing you don't.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #474B4A">Real screens from MyClinicDesk — built to be learned in minutes by doctors and front-desk staff alike.</p>
+</div>
+<div class="shots">
+<article class="shot wide">
+<div class="pic"><img src="assets/screens/dashboard.webp" alt="MyClinicDesk dashboard showing patient counts, today's appointments and recalls due" loading="lazy" decoding="async"></div>
+<div class="txt"><h3>Your whole clinic at a glance</h3><p>Patients today, this week and this month, upcoming appointments and follow-ups due — the moment you log in.</p></div>
+</article>
+<article class="shot wide">
+<div class="pic"><img src="assets/screens/appointments.webp" alt="Appointment booking form and monthly calendar" loading="lazy" decoding="async"></div>
+<div class="txt"><h3>Book appointments in seconds</h3><p>Pick a registered patient or add a new one, choose a time and you're done. See the whole month on one calendar.</p></div>
+</article>
+<article class="shot">
+<div class="pic"><img src="assets/screens/qr-registration.webp" alt="Printable QR code for new patient self-registration" loading="lazy" decoding="async"></div>
+<div class="txt"><h3>Patients register themselves</h3><p>Print your clinic's QR code for the reception desk. Patients scan it, fill in their details and appear in your list.</p></div>
+</article>
+<article class="shot">
+<div class="pic"><img src="assets/screens/prescription.webp" alt="Printed prescription on clinic letterhead with doctor's signature" loading="lazy" decoding="async"></div>
+<div class="txt"><h3>Clean, professional prescriptions</h3><p>On your letterhead with your signature. Print it, or send it to the patient on WhatsApp in one tap.</p></div>
+</article>
+<article class="shot">
+<div class="pic"><img src="assets/screens/invoice.webp" alt="Invoice with part payment and balance due" loading="lazy" decoding="async"></div>
+<div class="txt"><h3>Bills that track every rupee</h3><p>Create invoices, record part payments in cash or UPI, and see the balance due instantly.</p></div>
+</article>
 </div>
 </div>
 </section>
@@ -89,6 +133,9 @@ Your browser does not support video. <a href="assets/intro.mp4">Download the int
 <span style="color: #17573A; font-weight: 600; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase">Everything your clinic needs</span>
 <h2 style="margin: 0; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.12; font-weight: 700">From the first appointment to the final bill</h2>
 <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #474B4A">Replace paper registers and scattered spreadsheets with one app your doctors, receptionists and patients can all use on day one.</p>
+</div>
+<div style="display: flex; justify-content: center; margin: 0 0 18px">
+<span style="display: inline-flex; align-items: center; gap: 10px; background: #1F6F4A; color: #FFFFFF; font-weight: 700; font-size: 16px; padding: 10px 20px 10px 12px; border-radius: 999px; box-shadow: 0 8px 20px rgba(31,111,74,0.25)"><span style="width: 28px; height: 28px; border-radius: 50%; background: #FFFFFF; display: inline-flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 24 24" fill="#1F6F4A" aria-hidden="true"><path d="M6 4l14 8-14 8z"></path></svg></span>Watch demo tour</span>
 </div>
 <div style="max-width: 900px; margin: 0 auto 56px; border-radius: 18px; overflow: hidden; background: #161A18; border: 1px solid #E2E2DC; box-shadow: 0 24px 60px rgba(11,31,28,0.10); aspect-ratio: 16 / 9">
 <video controls playsinline preload="none" poster="assets/demo-poster.jpg" style="display: block; width: 100%; height: 100%; object-fit: cover" aria-label="MyClinicDesk product demo video">
